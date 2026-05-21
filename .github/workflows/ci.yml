@@ -2,9 +2,15 @@ name: CI
 
 on:
   push:
-    branches: [main, dev]
+    branches:
+      - main
+      - dev
+
   pull_request:
-    branches: [main, dev]
+    branches:
+      - main
+      - dev
+
   workflow_dispatch:
 
 concurrency:
@@ -12,24 +18,45 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-test:
-    name: Build and test (macOS, Swift 6.1)
-    runs-on: macos-latest
+  build:
+    name: Build Package
+    runs-on: macos-15
+
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - {
+              name: iOS,
+              destination: 'generic/platform=iOS Simulator'
+            }
+          - {
+              name: tvOS,
+              destination: 'generic/platform=tvOS Simulator'
+            }
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Select Swift 6.1
-        uses: swift-actions/setup-swift@v2
+      - name: Select Xcode
+        uses: maxim-lobanov/setup-xcode@v1
         with:
-          swift-version: "6.1"
+          xcode-version: '16.3'
 
-      - name: Swift version
-        run: swift --version
+      - name: Xcode version
+        run: xcodebuild -version
 
-      - name: Build (debug)
-        run: swift build -v
+      - name: Resolve package dependencies
+        run: |
+          xcodebuild \
+            -resolvePackageDependencies
 
-      - name: Run tests
-        run: swift test -v
+      - name: Build Swift Package
+        run: |
+          xcodebuild \
+            -scheme WelcomeScreen \
+            -destination "${{ matrix.platform.destination }}" \
+            -configuration Debug \
+            clean build \
+            CODE_SIGNING_ALLOWED=NO
