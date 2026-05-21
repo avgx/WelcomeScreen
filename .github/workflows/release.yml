@@ -1,10 +1,4 @@
 name: Release
-  contents: write
-
-concurrency:
-  group: release-${{ github.ref }}
-  cancel-in-progress: false
-
 jobs:
   verify-and-release:
     name: Verify and Publish Release
@@ -13,15 +7,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform:
-          - {
-              name: iOS,
-              destination: 'generic/platform=iOS Simulator'
-            }
-          - {
-              name: tvOS,
-              destination: 'generic/platform=tvOS Simulator'
-            }
+        include:
+          - name: iOS
+            destination: generic/platform=iOS Simulator
+
+          - name: tvOS
+            destination: generic/platform=tvOS Simulator
 
     steps:
       - name: Checkout
@@ -30,15 +21,14 @@ jobs:
       - name: Select Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '16.3'
+          xcode-version: "16.3"
 
       - name: Xcode version
         run: xcodebuild -version
 
       - name: Resolve package dependencies
         run: |
-          xcodebuild \
-            -resolvePackageDependencies
+          xcodebuild -resolvePackageDependencies
 
       - name: Validate Package.swift
         run: |
@@ -48,13 +38,13 @@ jobs:
         run: |
           xcodebuild \
             -scheme WelcomeScreen \
-            -destination "${{ matrix.platform.destination }}" \
+            -destination "${{ matrix.destination }}" \
             -configuration Release \
             clean build \
             CODE_SIGNING_ALLOWED=NO
 
       - name: Archive Package Sources
-        if: matrix.platform.name == 'iOS'
+        if: matrix.name == 'iOS'
         run: |
           zip -r WelcomeScreen-${{ github.ref_name }}.zip \
             Package.swift \
@@ -63,7 +53,7 @@ jobs:
             README.md
 
       - name: Create GitHub Release
-        if: matrix.platform.name == 'iOS'
+        if: matrix.name == 'iOS'
         uses: softprops/action-gh-release@v2
         with:
           generate_release_notes: true
