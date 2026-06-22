@@ -26,10 +26,13 @@ jobs:
       DEVELOPER_DIR: /Applications/Xcode_26.2.app/Contents/Developer
     steps:
       - uses: actions/checkout@v4
+
       - name: Boot simulator
         run: xcrun simctl boot "iPhone 17" || true
+
       - name: Check simulator status
-          xcrun simctl bootstatus "iPhone 17" -b
+        run:  xcrun simctl bootstatus "iPhone 17" -b
+
       - name: Run Tests
         run: xcodebuild test -scheme "WelcomeScreen" -destination "name=iPhone 17" | xcpretty
   macos-latest:
@@ -50,10 +53,13 @@ jobs:
       DEVELOPER_DIR: /Applications/Xcode_26.2.app/Contents/Developer
     steps:
       - uses: actions/checkout@v4
+
       - name: Boot simulator
         run: xcrun simctl boot "Apple TV" || true
+
       - name: Check simulator status
-          xcrun simctl bootstatus "Apple TV" -b
+        run:  xcrun simctl bootstatus "Apple TV" -b
+
       - name: Run Tests
         run: xcodebuild test -scheme "WelcomeScreen" -destination "name=Apple TV" | xcbeautify
   swift-build:
@@ -64,5 +70,6 @@ jobs:
       DEVELOPER_DIR: /Applications/Xcode_26.2.app/Contents/Developer
     steps:
       - uses: actions/checkout@v4
+
       - name: Build
         run: swift build
