@@ -7,8 +7,8 @@ public struct WelcomeScreen<Logo: View>: View {
     private let appName: String
     private let description: String
     private let logo: Logo
-    private let licenseUrl: String
-    private let privacyUrl: String
+    private let license: URL
+    private let privacy: URL
     private let onSignIn: () -> Void
     
     // MARK: - Initialization
@@ -16,21 +16,25 @@ public struct WelcomeScreen<Logo: View>: View {
         appName: String,
         description: String,
         @ViewBuilder logo: () -> Logo,
-        licenseUrl: String,
-        privacyUrl: String,
+        license: URL,
+        privacy: URL,
         onSignIn: @escaping () -> Void
     ) {
         self.appName = appName
         self.description = description
         self.logo = logo()
-        self.licenseUrl = licenseUrl
-        self.privacyUrl = privacyUrl
+        self.license = license
+        self.privacy = privacy
         self.onSignIn = onSignIn
     }
     
     private var legalAgreementText: AttributedString {
         let template = String(localized: "legal-agreement", bundle: .module)
-        let markdown = String(format: template, licenseUrl, privacyUrl)
+        
+        let markdown = template
+            .replacingOccurrences(of: "%1$@", with: license.absoluteString)
+            .replacingOccurrences(of: "%2$@", with: privacy.absoluteString)
+
         var options = AttributedString.MarkdownParsingOptions()
         options.interpretedSyntax = .inlineOnlyPreservingWhitespace
         return (try? AttributedString(markdown: markdown, options: options))
@@ -116,8 +120,8 @@ public struct WelcomeScreen<Logo: View>: View {
                 .aspectRatio(contentMode: .fit)
                 .foregroundStyle(color)
         },
-        licenseUrl: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
-        privacyUrl: "https://www.apple.com/legal/privacy/",
+        license: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!,
+        privacy: URL(string: "https://www.apple.com/legal/privacy/")!,
         onSignIn: {
             print("Sign in tapped")
         }
@@ -137,8 +141,8 @@ public struct WelcomeScreen<Logo: View>: View {
                 .aspectRatio(contentMode: .fit)
                 .foregroundStyle(color)
         },
-        licenseUrl: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
-        privacyUrl: "https://www.apple.com/legal/privacy/",
+        license: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!,
+        privacy: URL(string: "https://www.apple.com/legal/privacy/")!,
         onSignIn: {
             print("Sign in tapped")
         }

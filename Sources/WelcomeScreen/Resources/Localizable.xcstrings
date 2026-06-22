@@ -1,58 +1,58 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "welcome-to" : {
+    "legal-agreement" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Mit der Anmeldung stimmen Sie der [Lizenzvereinbarung](%1$@) und der [Datenschutzerklärung](%2$@) zu"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Welcome to"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добро пожаловать в"
+            "value" : "By signing in, you agree to the [License Agreement](%1$@) and [Privacy Policy](%2$@)"
           }
         },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bienvenido a"
+            "state" : "needs_review",
+            "value" : "Al iniciar sesión, acepta el [Acuerdo de Licencia](%1$@) y la [Política de Privacidad](%2$@)"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bienvenue à"
+            "state" : "needs_review",
+            "value" : "En vous connectant, vous acceptez le [Contrat de Licence](%1$@) et la [Politique de Confidentialité](%2$@)"
           }
         },
-        "de" : {
+        "ru" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Willkommen bei"
+            "state" : "needs_review",
+            "value" : "Входя в систему, вы соглашаетесь с [Лицензионным соглашением](%1$@) и [Политикой конфиденциальности](%2$@)"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "欢迎使用"
+            "state" : "needs_review",
+            "value" : "登录即表示您同意[许可协议](%1$@)和[隐私政策](%2$@)"
           }
         }
       }
     },
     "sign-in" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anmelden"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sign In"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Войти"
           }
         },
         "es" : {
@@ -67,10 +67,10 @@
             "value" : "Se Connecter"
           }
         },
-        "de" : {
+        "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Anmelden"
+            "value" : "Войти"
           }
         },
         "zh-Hans" : {
@@ -81,42 +81,42 @@
         }
       }
     },
-    "legal-agreement" : {
+    "welcome-to" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Willkommen bei"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "By signing in, you agree to the [License Agreement](%@) and [Privacy Policy](%@)"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Входя в систему, вы соглашаетесь с [Лицензионным соглашением](%@) и [Политикой конфиденциальности](%@)"
+            "value" : "Welcome to"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Al iniciar sesión, acepta el [Acuerdo de Licencia](%@) y la [Política de Privacidad](%@)"
+            "value" : "Bienvenido a"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "En vous connectant, vous acceptez le [Contrat de Licence](%@) et la [Politique de Confidentialité](%@)"
+            "value" : "Bienvenue à"
           }
         },
-        "de" : {
+        "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mit der Anmeldung stimmen Sie der [Lizenzvereinbarung](%@) und der [Datenschutzerklärung](%@) zu"
+            "value" : "Добро пожаловать в"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "登录即表示您同意[许可协议](%@)和[隐私政策](%@)"
+            "value" : "欢迎使用"
           }
         }
       }
