@@ -51,11 +51,17 @@ jobs:
       - name: Resolve package dependencies
         run: xcodebuild -resolvePackageDependencies
 
+      - name: Boot simulator
+        run: xcrun simctl boot "iPhone 16" || true
+
+      - name: Boot tvOS simulator
+        run: xcrun simctl boot "Apple TV" || true
+
       - name: Build iOS
-        run:     xcodebuild -scheme WelcomeScreen -destination "generic/platform=iOS" build CODE_SIGNING_ALLOWED=NO
+        run:     xcodebuild -scheme WelcomeScreen -destination "platform=iOS Simulator,name=iPhone 16" -configuration Debug build CODE_SIGNING_ALLOWED=NO
 
       - name: Build tvOS
-        run:     xcodebuild -scheme WelcomeScreen -destination "generic/platform=tvOS" build CODE_SIGNING_ALLOWED=NO
+        run:     xcodebuild -scheme WelcomeScreen -destination "platform=tvOS Simulator,name=Apple TV" -configuration Debug build CODE_SIGNING_ALLOWED=NO
 
       - name: Build macOS
         run:     xcodebuild -scheme WelcomeScreen -destination "generic/platform=macOS" build CODE_SIGNING_ALLOWED=NO
