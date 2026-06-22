@@ -19,21 +19,11 @@ concurrency:
 
 jobs:
   build:
-    name: Build (${{ matrix.platform.name }})
+    name: Build
     runs-on: macos-15
 
     strategy:
       fail-fast: false
-      matrix:
-        platform:
-          - name: iOS
-            sdk: iphoneos
-
-          - name: tvOS
-            sdk: appletvos
-
-          - name: macOS
-            sdk: macosx
 
     steps:
       - name: Checkout
@@ -59,11 +49,11 @@ jobs:
       - name: Resolve package dependencies
         run: xcodebuild -resolvePackageDependencies
 
-      - name: Build Swift Package
-        run: |
-          xcodebuild \
-            -scheme WelcomeScreen \
-            -sdk "${{ matrix.platform.sdk }}" \
-            -configuration Debug \
-            build \
-            CODE_SIGNING_ALLOWED=NO
+      - name: Build iOS
+        run:     xcodebuild -scheme WelcomeScreen -destination "generic/platform=iOS" build CODE_SIGNING_ALLOWED=NO
+
+      - name: Build tvOS
+        run:     xcodebuild -scheme WelcomeScreen -destination "generic/platform=tvOS" build CODE_SIGNING_ALLOWED=NO
+
+      - name: Build macOS
+        run:     xcodebuild -scheme WelcomeScreen -destination "generic/platform=macOS" build CODE_SIGNING_ALLOWED=NO
