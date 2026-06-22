@@ -10,18 +10,21 @@ permissions:
 
 jobs:
   verify-and-release:
-    name: Verify and Publish Release
+    name: Verify (${{ matrix.platform.name }})
     runs-on: macos-15
 
     strategy:
       fail-fast: false
       matrix:
-        include:
+        platform:
           - name: iOS
-            destination: generic/platform=iOS Simulator
+            sdk: iphoneos
 
           - name: tvOS
-            destination: generic/platform=tvOS Simulator
+            sdk: appletvos
+
+          - name: macOS
+            sdk: macosx
 
     steps:
       - name: Checkout
@@ -35,25 +38,25 @@ jobs:
       - name: Xcode version
         run: xcodebuild -version
 
-      - name: Resolve package dependencies
-        run: |
-          xcodebuild -resolvePackageDependencies
-
       - name: Validate Package.swift
         run: |
           swift package dump-package > /dev/null
+
+      - name: Resolve package dependencies
+        run: |
+          xcodebuild -resolvePackageDependencies
 
       - name: Build Release Configuration
         run: |
           xcodebuild \
             -scheme WelcomeScreen \
-            -destination "${{ matrix.destination }}" \
+            -sdk "${{ matrix.platform.sdk }}" \
             -configuration Release \
-            clean build \
+            build \
             CODE_SIGNING_ALLOWED=NO
 
       - name: Archive Package Sources
-        if: matrix.name == 'iOS'
+        if: matrix.platform.name == 'iOS'
         run: |
           zip -r WelcomeScreen-${{ github.ref_name }}.zip \
             Package.swift \
@@ -62,7 +65,7 @@ jobs:
             README.md
 
       - name: Create GitHub Release
-        if: matrix.name == 'iOS'
+        if: matrix.platform.name == 'iOS'
         uses: softprops/action-gh-release@v2
         with:
           generate_release_notes: true

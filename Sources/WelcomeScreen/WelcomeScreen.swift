@@ -29,6 +29,15 @@ public struct WelcomeScreen<Logo: View>: View {
         self.onSignIn = onSignIn
     }
     
+    private var legalAgreementText: AttributedString {
+        let template = String(localized: "legal-agreement", bundle: .module)
+        let markdown = String(format: template, licenseUrl, privacyUrl)
+        var options = AttributedString.MarkdownParsingOptions()
+        options.interpretedSyntax = .inlineOnlyPreservingWhitespace
+        return (try? AttributedString(markdown: markdown, options: options))
+            ?? AttributedString(markdown)
+    }
+    
     // MARK: - Body
     public var body: some View {
         VStack(spacing: 0) {
@@ -79,16 +88,13 @@ public struct WelcomeScreen<Logo: View>: View {
             .frame(maxWidth: 400)
             
             // Legal Agreement Text
-            Text(.init(String(
-                format: String(localized: "legal-agreement", bundle: .module),
-                licenseUrl,
-                privacyUrl
-            )))
-            .font(.caption)
-            .foregroundStyle(.secondary)
-            .multilineTextAlignment(.center)
-            .padding(.horizontal, 20)
-            .padding(.bottom, 24)
+            Text(legalAgreementText)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .multilineTextAlignment(.center)
+                .tint(.accentColor)  // чтобы ссылки были видны
+                .padding(.horizontal, 20)
+                .padding(.bottom, 24)            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         #if !os(tvOS)

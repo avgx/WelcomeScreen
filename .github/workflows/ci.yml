@@ -19,21 +19,21 @@ concurrency:
 
 jobs:
   build:
-    name: Build Package
+    name: Build (${{ matrix.platform.name }})
     runs-on: macos-15
 
     strategy:
       fail-fast: false
       matrix:
         platform:
-          - {
-              name: iOS,
-              destination: 'generic/platform=iOS Simulator'
-            }
-          - {
-              name: tvOS,
-              destination: 'generic/platform=tvOS Simulator'
-            }
+          - name: iOS
+            sdk: iphoneos
+
+          - name: tvOS
+            sdk: appletvos
+
+          - name: macOS
+            sdk: macosx
 
     steps:
       - name: Checkout
@@ -42,21 +42,25 @@ jobs:
       - name: Select Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '16.3'
+          xcode-version: "16.3"
 
       - name: Xcode version
         run: xcodebuild -version
+        
+      - name: Xcode sdks
+        run: xcodebuild -showsdks
+
+      - name: Validate Package.swift
+        run: swift package dump-package > /dev/null
 
       - name: Resolve package dependencies
-        run: |
-          xcodebuild \
-            -resolvePackageDependencies
+        run: xcodebuild -resolvePackageDependencies
 
       - name: Build Swift Package
         run: |
           xcodebuild \
             -scheme WelcomeScreen \
-            -destination "${{ matrix.platform.destination }}" \
+            -sdk "${{ matrix.platform.sdk }}" \
             -configuration Debug \
-            clean build \
+            build \
             CODE_SIGNING_ALLOWED=NO
