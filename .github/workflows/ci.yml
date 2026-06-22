@@ -46,6 +46,8 @@ jobs:
       - name: Validate Package.swift
         run: swift package dump-package > /dev/null
 
+      - run: xcrun simctl list devices available
+
       - name: Resolve package dependencies
         run: xcodebuild -resolvePackageDependencies
 
@@ -57,3 +59,4 @@ jobs:
 
       - name: Build macOS
         run:     xcodebuild -scheme WelcomeScreen -destination "generic/platform=macOS" build CODE_SIGNING_ALLOWED=NO
+

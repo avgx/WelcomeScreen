@@ -1,6 +1,5 @@
 import SwiftUI
 
-// MARK: - Welcome Screen
 @MainActor
 public struct WelcomeScreen<Logo: View>: View {
     
@@ -68,7 +67,6 @@ public struct WelcomeScreen<Logo: View>: View {
                 .font(.title3)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
-                //.lineLimit(2...4)
                 .lineLimit(4)
                 .padding(.horizontal, 32)
                 .padding(.bottom, 48)
@@ -92,13 +90,16 @@ public struct WelcomeScreen<Logo: View>: View {
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
-                .tint(.accentColor)  // чтобы ссылки были видны
+                .tint(.accentColor)
                 .padding(.horizontal, 20)
-                .padding(.bottom, 24)            
+                .padding(.bottom, 24)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        #if !os(tvOS)
+        #if os(iOS)
         .background(Color(.systemBackground))
+        #endif
+        #if os(macOS)
+        .background(Color(NSColor.windowBackgroundColor))
         #endif
     }
 }
@@ -145,57 +146,4 @@ public struct WelcomeScreen<Logo: View>: View {
     .accentColor(color)
     .environment(\.colorScheme, .dark)
     .environment(\.locale, Locale(identifier: "es"))
-}
-
-#Preview("Sample") {
-    struct WelcomeScreenSample: View {
-        @State private var isAuthenticated = false
-        
-        var body: some View {
-            if isAuthenticated {
-                Text("Main App Content")
-                    .font(.largeTitle)
-            } else {
-                WelcomeScreen(
-                    appName: "My Awesome Super App",
-                    description: "Connect with friends, share moments, and discover new experiences together.",
-                    logo: {
-                        if let appIcon = getAppIcon() {
-                            Image(uiImage: appIcon)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .clipShape(RoundedRectangle(cornerRadius: 24))
-                        } else {
-                            Image(systemName: "app.gift")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .foregroundStyle(.blue)
-                        }
-                    },
-                    licenseUrl: "https://myapp.com/license",
-                    privacyUrl: "https://myapp.com/privacy",
-                    onSignIn: {
-                        authenticate()
-                    }
-                )
-            }
-        }
-        
-        private func getAppIcon() -> UIImage? {
-            if let icons = Bundle.main.infoDictionary?["CFBundleIcons"] as? [String: Any],
-               let primaryIcon = icons["CFBundlePrimaryIcon"] as? [String: Any],
-               let iconFiles = primaryIcon["CFBundleIconFiles"] as? [String],
-               let lastIcon = iconFiles.last {
-                return UIImage(named: lastIcon)
-            }
-            return nil
-        }
-        
-        private func authenticate() {
-            // Authentication logic
-            isAuthenticated = true
-        }
-    }
-    
-    return WelcomeScreenSample()
 }
