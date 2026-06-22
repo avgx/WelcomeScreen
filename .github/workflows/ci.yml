@@ -49,6 +49,9 @@ jobs:
         
       - name: Xcode sdks
         run: xcodebuild -showsdks
+        
+      - name: Show destinations
+        run:  xcodebuild  -scheme WelcomeScreen  -showdestinations
 
       - name: Validate Package.swift
         run: swift package dump-package > /dev/null
