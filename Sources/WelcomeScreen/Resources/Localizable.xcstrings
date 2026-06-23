@@ -3,10 +3,22 @@
   "strings" : {
     "legal-agreement" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "بتسجيل الدخول، فإنك توافق على [اتفاقية الترخيص](%1$@) و[سياسة الخصوصية](%2$@)"
+          }
+        },
         "be" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Уваходзячы ў сістэму, вы згаджаецеся з [Ліцензійным пагадненнем](%1$@) і [Палітыкай канфідэнцыяльнасці](%2$@)"
+          }
+        },
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Като влезете, вие се съгласявате с [Лицензионното споразумение](%1$@) и [Политиката за поверителност](%2$@)"
           }
         },
         "ca" : {
@@ -21,10 +33,22 @@
             "value" : "Přihlášením souhlasíte s [Licenční smlouvou](%1$@) a [Zásadami ochrany osobních údajů](%2$@)"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ved at logge ind accepterer du [Licensaftalen](%1$@) og [Privatlivspolitikken](%2$@)"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mit der Anmeldung stimmen Sie der [Lizenzvereinbarung](%1$@) und der [Datenschutzerklärung](%2$@) zu"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Συνδεόμενοι, συμφωνείτε με τη [Συμφωνία Άδειας](%1$@) και την [Πολιτική Απορρήτου](%2$@)"
           }
         },
         "en" : {
@@ -37,6 +61,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Al iniciar sesión, acepta el [Acuerdo de Licencia](%1$@) y la [Política de Privacidad](%2$@)"
+          }
+        },
+        "es-MX" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Al iniciar sesión, aceptas el [Acuerdo de Licencia](%1$@) y la [Política de Privacidad](%2$@)"
           }
         },
         "fa" : {
@@ -57,16 +87,58 @@
             "value" : "בכניסה, אתה מסכים ל[הסכם הרישיון](%1$@) ול[מדיניות הפרטיות](%2$@)"
           }
         },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prijavom se slažete s [Licencnim ugovorom](%1$@) i [Pravilima o privatnosti](%2$@)"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bejelentkezéssel elfogadja a [Licencszerződést](%1$@) és az [Adatvédelmi irányelveket](%2$@)"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accedendo, accetti il [Contratto di Licenza](%1$@) e l'[Informativa sulla Privacy](%2$@)"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "サインインすることで、[ライセンス契約](%1$@)および[プライバシーポリシー](%2$@)に同意したことになります"
           }
         },
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жүйеге кірсеңіз, [Лицензиялық келісім](%1$@) мен [Құпиялылық саясаты](%2$@)мен келісесіз"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "로그인하면 [라이선스 계약](%1$@) 및 [개인정보 처리방침](%2$@)에 동의하게 됩니다"
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prisijungdami sutinkate su [Licencijos sutartimi](%1$@) ir [Privatumo politika](%2$@)"
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pierakstoties jūs piekrītat [Licences līgumam](%1$@) un [Privātuma politikai](%2$@)"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Door in te loggen gaat u akkoord met de [Licentieovereenkomst](%1$@) en het [Privacybeleid](%2$@)"
           }
         },
         "pl" : {
@@ -93,6 +165,42 @@
             "value" : "Входя в систему, вы соглашаетесь с [Лицензионным соглашением](%1$@) и [Политикой конфиденциальности](%2$@)"
           }
         },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prihlásením súhlasíte s [Licenčnou zmluvou](%1$@) a [Zásadami ochrany osobných údajov](%2$@)"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prijavljivanjem se slažete sa [Licencnim ugovorom](%1$@) i [Politikom privatnosti](%2$@)"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "การลงชื่อเข้าใช้ถือว่าคุณยอมรับ[ข้อตกลงสัญญาอนุญาต](%1$@)และ[นโยบายความเป็นส่วนตัว](%2$@)"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oturum açarak [Lisans Sözleşmesi](%1$@) ve [Gizlilik Politikası](%2$@)'nı kabul etmiş olursunuz"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увійшовши в систему, ви погоджуєтеся з [Ліцензійною угодою](%1$@) та [Політикою конфіденційності](%2$@)"
+          }
+        },
+        "zh-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "登录即表示您同意[许可协议](%1$@)和[隐私政策](%2$@)"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -110,15 +218,33 @@
             "state" : "translated",
             "value" : "登入即表示您同意[授權條款](%1$@)和[隱私權政策](%2$@)"
           }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "登入即表示您同意[授權條款](%1$@)和[隱私權政策](%2$@)"
+          }
         }
       }
     },
     "sign-in" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تسجيل الدخول"
+          }
+        },
         "be" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Увайсці"
+          }
+        },
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вход"
           }
         },
         "ca" : {
@@ -133,10 +259,22 @@
             "value" : "Přihlásit se"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log ind"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Anmelden"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Σύνδεση"
           }
         },
         "en" : {
@@ -146,6 +284,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iniciar Sesión"
+          }
+        },
+        "es-MX" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Iniciar Sesión"
@@ -169,16 +313,58 @@
             "value" : "התחברות"
           }
         },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prijava"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bejelentkezés"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accedi"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "サインイン"
           }
         },
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кіру"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "로그인"
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prisijungti"
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pierakstīties"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inloggen"
           }
         },
         "pl" : {
@@ -205,6 +391,42 @@
             "value" : "Войти"
           }
         },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prihlásiť sa"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prijava"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ลงชื่อเข้าใช้"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oturum Aç"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увійти"
+          }
+        },
+        "zh-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "登录"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -222,15 +444,33 @@
             "state" : "translated",
             "value" : "登入"
           }
+        },
+        "zh-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "登入"
+          }
         }
       }
     },
     "welcome-to" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مرحبًا بك في"
+          }
+        },
         "be" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Сардэчна запрашаем у"
+          }
+        },
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добре дошли в"
           }
         },
         "ca" : {
@@ -245,10 +485,22 @@
             "value" : "Vítejte v"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Velkommen til"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Willkommen bei"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Καλώς ήρθατε στο"
           }
         },
         "en" : {
@@ -258,6 +510,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bienvenido a"
+          }
+        },
+        "es-MX" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bienvenido a"
@@ -281,16 +539,58 @@
             "value" : "ברוכים הבאים"
           }
         },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dobrodošli u"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Üdvözöljük a"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Benvenuto in"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ようこそ"
           }
         },
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Қош келдіңіз"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "환영합니다"
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sveiki atvykę į"
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laipni lūdzam"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welkom bij"
           }
         },
         "pl" : {
@@ -317,6 +617,42 @@
             "value" : "Добро пожаловать в"
           }
         },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vitajte v"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dobrodošli u"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ยินดีต้อนรับสู่"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoş geldiniz"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ласкаво просимо до"
+          }
+        },
+        "zh-CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "欢迎使用"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -330,6 +666,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "歡迎使用"
+          }
+        },
+        "zh-TW" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "歡迎使用"
